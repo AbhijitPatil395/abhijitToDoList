@@ -19,14 +19,12 @@ export class toDoList implements OnInit
     tDesc!:string;
     tDueDate!:Date;
     t!:task;
-    
-    @ViewChild(listComponent)
-    private listCompo!: listComponent;
 
     constructor(private ls:listService){}
     ngOnInit(): void {
       console.log("todolist compo init:")
     }
+    
     addTask(){
         console.log("add task of todolist")
         this.t=new task();
