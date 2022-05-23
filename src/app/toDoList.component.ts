@@ -18,8 +18,8 @@ export class toDoList implements OnInit
     tName!:string;
     tDesc!:string;
     tDueDate!:Date;
-   
     t!:task;
+    
     @ViewChild(listComponent)
     private listCompo!: listComponent;
 
@@ -29,7 +29,6 @@ export class toDoList implements OnInit
     }
     addTask(){
         console.log("add task of todolist")
-
         this.t=new task();
         this.t.dueDate=new Date(this.tDueDate);
         this.t.taskName=this.tName;
@@ -38,42 +37,13 @@ export class toDoList implements OnInit
         this.t.taskStatus="Pending";
         console.log(this.t);
         this.ls.createTask(this.t);
-        
     }
     onKeyName(event:any){
-        console.log(event.target.value)
         this.tName=event.target.value; 
     }
     onKeyDesc(event:any){
-        //console.log(event.target.value)
         this.tDesc=event.target.value; 
     }
-    getAllTasks(){
-        return this.ls.getAllTasks();
-    }
-    getPendingTasks():task[]{
-      
-        return this.ls.getPendingTasks();
-    }
-    getCompletedTasks():task[]{
-        return this.ls.getCompletedTasks();
-    }
-    getTodaysDueTasks():task[]{
-        
-        return this.ls.getTodaysDueTasks();
-        
-    }
-    getTomorrowsDueTasks():task[]{
-        
-        return this.ls.getTomorrowsDueTasks();
-        
-    }
-    markCompleted(id:number){
-        this.ls.markCompleted(id);
-    }
-    remove(id:number){
-        this.ls.removeTask(id);
-    }
-
+    
   }
   

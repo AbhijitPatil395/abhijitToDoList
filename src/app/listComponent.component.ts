@@ -18,7 +18,7 @@ export class listComponent
 
    
     getTasks():task[]{
-        //console.log("inside get tasks")
+       
         if(this.taskType=="Pending")
         {
             this.myTitle="Pending tasks "
@@ -41,22 +41,6 @@ export class listComponent
         }
         
     }
-    // getPendingTasks():task[]{
-    //     console.log("inside pending tasks")
-    //     return this.ls.getPendingTasks();
-    //     //console.log(this.allTasks);
-    // }
-    // getCompletedTasks(){
-    //     this.allTasks= this.ls.getCompletedTasks();
-        
-    // }
-    // getAllTasks(){
-    //     return this.allTasks=this.ls.getAllTasks();
-    // }
-    // addTask(t:task){
-    //     this.ls.createTask(t);
-    //     this.ngOnInit();
-    // }
     markCompleted(id:number){
         this.ls.markCompleted(id);
     }
