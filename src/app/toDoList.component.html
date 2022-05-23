@@ -1,0 +1,106 @@
+<div class="container">
+    <!-- <div class="row">
+      <div class="col">
+        <h3>To Do List</h3>
+      </div>
+      <div class="col">
+        Task Name:<input type="text" (keyup)="onKeyName($event)" /></div>
+        <div class="col">
+        Task Desc<input type="text" (keyup)="onKeyDesc($event)"/></div>
+        <div class="col">
+            <input type="date" [(ngModel)]="tDueDate"/>
+        </div>
+        <div class="col">
+        <button class="btn btn-primary" type="button" (click)="addTask()" >Add Task</button></div>
+      
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <h3>Pending Tasks</h3>
+        <tr>&nbsp;&nbsp;</tr>
+        <tr>
+        <div *ngFor="let t of getPendingTasks()" class="card" style="width: 15rem;">
+            <div class="card-body">
+                <tr><td>
+              <h5 class="card-title">{{t.taskName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></td><td><h6>{{t.taskStatus}}</h6></td></tr>
+              <h6 class="card-subtitle mb-2 text-muted">{{t.dueDate.toDateString()}}</h6>
+              <p class="card-text">{{t.taskDesc}}</p>
+              <button class="btn btn-success" type="button" (click)="markCompleted(t.taskId)" >Mark done</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger" type="button" (click)="remove(t.taskId)" >Remove</button>
+            </div>
+            
+          </div></tr>
+          <tr>&nbsp;&nbsp;</tr>
+      </div> -->
+      <!-- <div class="col-sm">
+        <h3>Todays due</h3>
+        <tr>&nbsp;&nbsp;</tr>
+        <tr>
+        <div *ngFor="let t of getTodaysDueTasks()" class="card" style="width: 15rem;">
+            <div class="card-body">
+                <tr><td>
+              <h5 class="card-title">{{t.taskName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></td><td><h6>{{t.taskStatus}}</h6></td></tr>
+              <h6 class="card-subtitle mb-2 text-muted">{{t.dueDate.toDateString()}}</h6>
+              <p class="card-text">{{t.taskDesc}}</p>
+            </div>
+            
+          </div></tr>
+      </div>
+      <div class="col-sm">
+        <h3>Tomorrow's due</h3>
+        <tr>&nbsp;&nbsp;</tr>
+        <tr>
+        <div *ngFor="let t of getTomorrowsDueTasks()" class="card" style="width: 15rem;">
+            <div class="card-body">
+                <tr><td>
+              <h5 class="card-title">{{t.taskName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></td><td><h6>{{t.taskStatus}}</h6></td></tr>
+              <h6 class="card-subtitle mb-2 text-muted">{{t.dueDate.toDateString()}}</h6>
+              <p class="card-text">{{t.taskDesc}}</p>
+            </div>
+            
+          </div></tr>
+      </div>
+      <div class="col-sm">
+        <h3>Completed</h3>
+            <tr>&nbsp;&nbsp;</tr>
+          <tr>
+          <div *ngFor="let t of getCompletedTasks()" class="card" style="width: 15rem;">
+              <div class="card-body">
+                  <tr><td>
+                <h5 class="card-title">{{t.taskName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></td><td><h6>{{t.taskStatus}}</h6></td></tr>
+                <h6 class="card-subtitle mb-2 text-muted">{{t.dueDate.toDateString()}}</h6>
+                <p class="card-text">{{t.taskDesc}}</p>
+                <button class="btn btn-danger" type="button" (click)="remove(t.taskId)" >Remove</button>
+              </div>
+              
+            </div></tr>
+            <tr>&nbsp;&nbsp;</tr>
+        
+      </div>
+    </div> -->
+    <div class="row">
+      <h1>My To do List</h1>
+      <div class="col">
+        Task Name:&nbsp;&nbsp;<input type="text" (keyup)="onKeyName($event)" /></div>
+        <div class="col">
+        Task Desc:&nbsp;&nbsp;<input type="text" (keyup)="onKeyDesc($event)"/></div>
+        <div class="col">
+            Due Date:&nbsp;&nbsp;<input type="date" [(ngModel)]="tDueDate"/>
+        </div>
+        <div class="col">
+        <button class="btn btn-primary" type="button" (click)="addTask()" >Add Task</button></div>
+      
+      
+
+    </div>
+    <div class="row">
+      <br>
+      <hr>
+    </div>
+    <div class="row">
+      <div *ngFor="let tp of types" class="col">
+        <pm-list  [taskType]="tp" ></pm-list>
+      </div>
+
+    </div>
+  </div>

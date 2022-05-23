@@ -1,0 +1,17 @@
+
+<h3>{{myTitle}}</h3>
+<tr>&nbsp;&nbsp;</tr>
+<tr>
+<div *ngFor="let t of getTasks()" class="card" style="width: 15rem;">
+    <div class="card-body">
+        <tr><td>
+      <h5 class="card-title">{{t.taskName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5></td><td><h6>{{t.taskStatus}}</h6></td></tr>
+      <h6 class="card-subtitle mb-2 text-muted">{{t.dueDate.toDateString()}}</h6>
+      <p class="card-text">{{t.taskDesc}}</p>
+      <button *ngIf="isPending(t)" class="btn btn-success" type="button" (click)="markCompleted(t.taskId)" >Mark done</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger" type="button" (click)="remove(t.taskId)" >Remove</button>
+    
+    </div>
+    
+  </div></tr>
+  <tr>&nbsp;&nbsp;</tr>
